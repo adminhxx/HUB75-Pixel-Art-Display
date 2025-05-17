@@ -16,7 +16,7 @@
 #define B_PIN   32 
 #define C_PIN   33
 #define D_PIN   17 
-#define E_PIN   21 
+#define E_PIN   18 
 
 
 #define PANEL_RES_X 64      
@@ -40,14 +40,14 @@ uint8_t scrollFontSize = 2; // Default font size (1 = small, 2 = normal, 3 = big
 uint8_t scrollSpeed = 18;   // Default scroll speed (1 = fastest, 150 = slowest)
 int16_t xOne, yOne;
 
-const String default_ssid = "SSID"; // Your WiFi SSID
-const String default_wifipassword = "Password"; // Your WiFi password
+const String default_ssid = "RMWIFI"; // Your WiFi SSID
+const String default_wifipassword = "1qazxsw2"; // Your WiFi password
 const String default_httpuser = "admin"; // WebUI login id
 const String default_httppassword = "admin"; // WebUI login password
 const int default_webserverporthttp = 80;
-const char* ntpServer = "pool.ntp.org"; // NTP server
+const char* ntpServer = "ntp1.aliyun.com"; // NTP server
 const char* PARAM_INPUT = "value";
-const long  gmtOffset_sec = 0; // GMT Timezone Offset in seconds (change this to your own)
+const long  gmtOffset_sec = 3600*8; // GMT Timezone Offset in seconds (change this to your own)
 const int   daylightOffset_sec = 0;
 const int maxGIFsPerPage = 4; // Change this value to set the maximum number of GIFs per page (keep this at 4)
 int textXPosition = 64;  // Will start off screen
@@ -473,10 +473,10 @@ void setup() {
   PANEL_CHAIN    // Chain length
   );
 
-  mxconfig.gpio.a = A_PIN;
-  mxconfig.gpio.b = B_PIN;
-  mxconfig.gpio.c = C_PIN;
-  mxconfig.gpio.d = D_PIN;
+  // mxconfig.gpio.a = A_PIN;
+  // mxconfig.gpio.b = B_PIN;
+  // mxconfig.gpio.c = C_PIN;
+  // mxconfig.gpio.d = D_PIN;
   mxconfig.gpio.e = E_PIN;
   
   mxconfig.clkphase = false;
